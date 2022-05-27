@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+.index-page {
+    height: 100vh;
+    width: 100%;
+    background-color: #e0e0e0;
+}
+
+/* HEADER STYLE */
+
+.header {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #22252b;
+    box-shadow: 0px 0px 2px #f7f7f777, 0px 0px 4px #f7f7f777;
+    z-index: 1000;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    color: #f7f7f7;
+}
+
+.header-container .header-logo {
+    font-family: 'Kaushan Script', cursive !important;
+    font-size: 1.6rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 200ms ease-in-out;
+    transition-property: transform;
+}
+
+.header-container .header-logo:hover {
+    transform: scale(1.05);
+}
+
+.header-container .header-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.header-container .header-nav .header-nav-link {
+    margin: 5px;
+    padding: 5px 10px;
+    opacity: .85;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    border: 2px solid #f0f0f044;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    transition-property: opacity;
+    user-select: none;
+
+    color: inherit !important;
+    text-decoration: none;
+}
+
+.header-container .header-nav .header-nav-link:hover {
+    opacity: 1;
+    border: 2px solid #f0f0f099;
+}
+
+/* LOADER */
+
+.loader {
+    z-index: 1000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader .loader-square {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #bd3636;
+    border-right: none;
+    border-left: none;
+    border-radius: 50%;
+    position: relative;
+    animation: loaderAnim 1500ms ease-in-out infinite alternate-reverse;
+}
+
+.loader .loader-square .dot-1,
+.loader .loader-square .dot-2 {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    border-radius: 50%;
+    height: 7px;
+    width: 7px;
+    transform: translateX(-50%);
+    background-color: #bd3636;
+}
+
+.loader .loader-square .dot-2 {
+    top: unset;
+    bottom: 4px;
+}
+
+@keyframes loaderAnim {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+/* SHOWCASE STYLE */
+
+.showcase {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.showcase .showcase-section {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.showcase .showcase-section.center {
+    align-items: center;
+}
+
+.showcase .showcase-section .showcase-artwork {
+    width: calc(100% - 200px);
+}
+
+.showcase .showcase-section .showcase-slogan {
+    font-size: 2.5rem;
+    font-family: "Montserrat" !important;
+    font-weight: 900 !important;
+    color: #22252b;
+    margin-bottom: 20px;
+}
+
+.showcase .showcase-section .showcase-slogan span {
+    font-family: inherit !important;
+    text-transform: capitalize;
+    font-weight: 900 !important;
+    color: #bd3636;
+}
+
+.showcase .showcase-section .showcase-description {
+    color: #22252b;
+    width: 100%;
+    max-width: 500px;
+}
+
+.showcase .showcase-section .showcase-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.showcase .showcase-section .showcase-buttons .showcase-signup-button {
+    color: #f7f7f7;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: #bd3636;
+    padding: 5px 20px;
+    border: 2px solid #22252b;
+    border-radius: 3px;
+}

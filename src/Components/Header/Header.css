@@ -1,0 +1,19 @@
+.link-icon {
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.header-nav-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-nav-link:hover {
+    opacity: 1 !important;
+}
+
+.header-nav-link span {
+    font-size: .9rem;
+}

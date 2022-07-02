@@ -1,0 +1,153 @@
+/* SIGNUP MODAL */
+
+.signup-modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000ee;
+    top: 0;
+    left: 0;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 4rem;
+    opacity: .5;
+    color: #f7f7f7;
+    cursor: pointer;
+    user-select: none;
+    transform: rotate(45deg);
+    z-index: 100000;
+    transition: all 200ms ease-in-out;
+    transition-property: opacity;
+}
+
+.modal-close-button:hover {
+    opacity: .9;
+}
+
+.signup-modal .form-container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    background-color: #f7f7f7;
+    padding: 10px 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px #f7f7f744, 0px 0px 10px #f7f7f744;
+}
+
+.signup-modal .form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.signup-modal .form-container form .form-title {
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.signup-modal .form-container form .form-title .title {
+    text-align: center;
+    color: #22252b;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.signup-modal .form-container form .form-title .icon {
+    font-size: 3rem;
+    color: #bd3636;
+    opacity: .8;
+}
+
+.signup-modal .form-container form .form-title .artwork {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.signup-modal .form-container form .form-label {
+    width: fit-content;
+    color: #181818;
+    margin-bottom: 3px;
+    font-size: .85rem;
+}
+
+.signup-modal .form-container form .form-input {
+    padding: 5px;
+    width: 400px;
+    margin-bottom: 10px;
+    color: #181818;
+    outline: none;
+    border: 2px solid #181818ee;
+}
+
+.signup-modal .form-container form .form-input:focus {
+    border: 2px solid #7c7ea0;
+}
+
+.signup-modal .form-container form .form-submit {
+    border: none;
+    outline: none;
+    background-color: #bd3636bb;
+    border: 2px solid #181818 !important;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #f7f7f7;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    transition-property: background-color;
+}
+
+.signup-modal .form-container form .form-submit:hover {
+    background-color: #bd3636dd;
+}
+
+.signup-modal .form-container form .form-submit:active {
+    transform: scale(1.02);
+}
+
+.signup-modal .form-container form .have-account {
+    cursor: pointer;
+    color: #181818;
+    align-self: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: .9rem;
+    user-select: none;
+}
+
+.signup-response {
+    color: #8092a3;
+    margin-top: 10px;
+    align-self: center;
+}
+
+/* Multiple inputs in one row */
+
+.form-input-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px !important;
+}
+
+.form-input-box .form-input-box-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-input-box .form-input-box-item .form-input {
+    width: 190px !important;
+}

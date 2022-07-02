@@ -4,6 +4,11 @@ import { useNavigate } from 'react-router-dom';
 
 import { ReactComponent as Artwork_1 } from '../../Assets/undraw_art_1.svg';
 
+import Login from './Components/Login/Login';
+import Signup from './Components/Signup/Signup';
+
+import axios from 'axios';
+
 import "./IndexPage.css";
 
 function IndexPage() {
@@ -37,19 +42,19 @@ function IndexPage() {
     }, [displayLogin, displaySignup]);
 
     useEffect(() => {
-        // checkLoginStatus();
+        checkLoginStatus();
         // request_logout();
     }, []);
 
     useEffect(() => {
-        // checkLoginStatus();
+        checkLoginStatus();
     }, [userLogged, userId]);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setDisplayLoader(false);
-        }, 1500);
-    }, []);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setDisplayLoader(false);
+    //     }, 1500);
+    // }, []);
 
     // HELPER FUNCTIONS
 
@@ -63,6 +68,36 @@ function IndexPage() {
     let gotoLoginIndex = () => {
         setDisplaySignup(false);
         setDisplayLogin(true);
+    };
+
+    // Check log status
+
+    let checkLoginStatus = () => {
+        axios.get(`${API_BASE_URL}/user/log-status`, { withCredentials: true })
+            .then(res => {
+                let user_id = res.data.session_user_id;
+                if (user_id != "null") {
+                    setUserId(user_id);
+                    setUserLogged(true);
+                    navigate("/home");
+                } else {
+                    setUserLogged(false);
+                }
+                setTimeout(() => {
+                    setDisplayLoader(false);
+                }, 1500);
+            });
+    }
+
+    // LOG OUT REQUEST
+
+    let request_logout = () => {
+
+        axios.post(`${API_BASE_URL}/user/logout`, {}, { withCredentials: true })
+            .then(res => {
+                console.log(res.data);
+            });
+
     };
 
     return (
@@ -107,10 +142,37 @@ function IndexPage() {
                         Join us now in <span>Portfolios</span> and show your talents to the world by adding your projects here.
                     </p>
                     <div className="showcase-buttons">
-                        <span className="showcase-signup-button">Join Now</span>
+                        <span className="showcase-signup-button" onClick={() => setDisplaySignup(true)}>
+                            Join Now
+                        </span>
                     </div>
                 </div>
             </div>
+
+            {/* LOGIN MODAL */}
+
+            {
+                displayLogin ?
+                    <Login
+                        API_BASE_URL={API_BASE_URL}
+                        gotoSignup={gotoSignupIndex}
+                        closeModal={() => setDisplayLogin(false)}
+                        setUserId={(id) => setUserId(id)}
+                    />
+                    : null
+            }
+
+            {/* SIGN UP MODAL */}
+
+            {
+                displaySignup ?
+                    <Signup
+                        API_BASE_URL={API_BASE_URL}
+                        gotoLogin={gotoLoginIndex}
+                        closeModal={() => setDisplaySignup(false)}
+                    /> : null
+            }
+
 
         </div>
     )

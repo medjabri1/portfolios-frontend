@@ -1,6 +1,7 @@
 .link-icon {
-    font-size: 1rem;
+    font-size: .9rem;
     margin-right: 5px;
+    padding: 3px;
 }
 
 .header-nav-link {

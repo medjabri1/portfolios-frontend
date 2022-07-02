@@ -1,0 +1,133 @@
+/* LOG IN MODAL */
+
+.login-modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000ee;
+    top: 0;
+    left: 0;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 4rem;
+    opacity: .5;
+    color: #f7f7f7;
+    cursor: pointer;
+    user-select: none;
+    transform: rotate(45deg);
+    z-index: 100000;
+    transition: all 200ms ease-in-out;
+    transition-property: opacity;
+}
+
+.modal-close-button:hover {
+    opacity: .9;
+}
+
+.login-modal .form-container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    background-color: #f7f7f7;
+    padding: 20px 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px #f7f7f744, 0px 0px 10px #f7f7f744;
+}
+
+.login-modal .form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.login-modal .form-container form .form-title {
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.login-modal .form-container form .form-title .title {
+    text-align: center;
+    color: #22252b;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.login-modal .form-container form .form-title .icon {
+    font-size: 3rem;
+    color: #bd3636;
+    opacity: .8;
+}
+
+.login-modal .form-container form .form-title .artwork {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.login-modal .form-container form .form-label {
+    width: 300px;
+    color: #22252b;
+    margin-bottom: 3px;
+    font-size: .9rem;
+}
+
+.login-modal .form-container form .form-input {
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 20px;
+    color: #22252b;
+    outline: none;
+    border: 2px solid #22252b;
+}
+
+.login-modal .form-container form .form-input:focus {
+    border: 2px solid #7c7ea0;
+}
+
+.login-modal .form-container form .form-submit {
+    border: none;
+    outline: none;
+    background-color: #bd3636bb;
+    border: 2px solid #22252b !important;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #f7f7f7;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    transition-property: background-color;
+}
+
+.login-modal .form-container form .form-submit:hover {
+    background-color: #bd3636dd;
+}
+
+.login-modal .form-container form .form-submit:active {
+    transform: scale(1.02);
+}
+
+.login-modal .form-container form .new-account {
+    cursor: pointer;
+    color: #22252b;
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: .8rem;
+    user-select: none;
+}
+
+.login-response {
+    color: #8092a3;
+    margin-top: 10px;
+    align-self: center;
+}

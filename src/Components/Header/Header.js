@@ -4,34 +4,34 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faSearch, faUser, faSignOutAlt } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { faHome, faSearch, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import axios from 'axios'
 
 import "./Header.css";
 
-function Navbar() {
+function Header() {
 
     let navigate = useNavigate();
     let API_BASE_URL = 'http://localhost:8081/api';
 
     let request_logout = () => {
 
-        // axios.post(`${API_BASE_URL}/user/logout`, {}, { withCredentials: true })
-        //     .then(res => {
-        //         console.log(res.data);
-        //     });
+        axios.post(`${API_BASE_URL}/user/logout`, {}, { withCredentials: true })
+            .then(res => {
+                console.log(res.data);
+            });
 
-        // setTimeout(() => {
-        //     navigate("/");
-        // }, 1000);
+        setTimeout(() => {
+            navigate("/");
+        }, 1000);
 
     };
 
     return (
         <div className="header">
             <div className="header-container">
-                <div className="header-logo">Portfolios</div>
+                <Link to="/home" className="header-logo">Portfolios</Link>
                 <ul className="header-nav">
 
                     {/* Home Link */}
@@ -63,4 +63,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default Header

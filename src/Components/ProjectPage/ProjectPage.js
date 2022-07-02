@@ -7,12 +7,12 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 
 import Header from "../Header/Header";
-import Home from "./Components/Home/Home";
-import Search from "./Components/Search/Search";
+import Project from "./Components/Project/Project";
+import NewProject from "./Components/NewProject/NewProject";
 
-import "./HomePage.css";
+import "./ProjectPage.css";
 
-function HomePage() {
+function ProjectPage() {
 
     const API_BASE_URL = 'http://localhost:8081/api';
     let navigate = useNavigate();
@@ -44,7 +44,7 @@ function HomePage() {
     }
 
     return (
-        <div className="home-page">
+        <div className="project-page">
 
             {/* LOADING */}
             {
@@ -60,11 +60,12 @@ function HomePage() {
 
             <Header />
             <Routes>
-                <Route path="/" element={<Home loggedUserId={loggedUserId} />} />
-                <Route path="/search" element={<Search />} />
+                <Route path="/:id" element={<Project loggedUserId={loggedUserId} />} />
+                <Route path="/new" element={<NewProject loggedUserId={loggedUserId} />} />
+                <Route path="/*" element={<h2>Default route for Project Page</h2>} />
             </Routes>
         </div>
     )
 }
 
-export default HomePage
+export default ProjectPage
